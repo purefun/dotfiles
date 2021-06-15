@@ -126,15 +126,12 @@ rightcmd:bind('k'):to(open.app('Dash'))
 rightcmd:bind('r'):to(open.app('Reeder'))
 rightcmd:bind('v'):to(open.app('Goland'))
 rightcmd:bind('a'):to(open.app('Anki'))
-
-rightcmd:bind('l'):to(function()
-  hs.caffeinate.startScreensaver()
-end)
+rightcmd:bind('l'):to(hs.caffeinate.startScreensaver)
 
 --------------------------------------------------------------------------------
 -- auto reload
 --------------------------------------------------------------------------------
 hs.loadSpoon('ReloadConfiguration')
-spoon.ReloadConfiguration.watch_paths = {'/Users/Nil/dotfiles/hammerspoon'}
+spoon.ReloadConfiguration.watch_paths = {'/Users/Nil/.hammerspoon'}
 spoon.ReloadConfiguration:start()
 hs.notify.new({title='Hammerspoon', informativeText='Config Loaded'}):send()
